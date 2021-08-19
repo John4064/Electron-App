@@ -1,0 +1,23 @@
+html{
+    font-family: monospace;
+}
+body {
+    font: inherit;
+    font-size: 32px;
+    background-color: darkblue;
+    color: greenyellow;
+    text-align: center;
+}
+h1{
+    color: lightcoral;
+    font-family: impact;
+}
+.container{
+    background-color: lightcoral;
+    border: 5px groove yellow;
+}
+button{
+    background-color: #000000;
+    color: #5a6eb1;
+    padding: .4em 1.2em;
+}
