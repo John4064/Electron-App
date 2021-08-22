@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>First Window</title>
+    <title>Stock Analysis</title>
+    <link rel="stylesheet" href = 'skeleton.css'>
+    <link rel="stylesheet" href = 'style.css'>
 </head>
 <body>
 <div>
-    <h1 style="color: green;">
+    <h1>
         Hello : This is first window
     </h1>
     <br />
 
-    <button onclick="goToSettingsWindow()">
+    <button onclick="makePostRequest(5)">
         Go to Settings Window
     </button>
 </div>
 <script>
-    const ipc = window.require('electron').ipcRenderer;
-
     // Function that will be called on click
     // event of "Go to settings window" button
-    function goToSettingsWindow(){
+    function doSomething(){
+        console.log(5);
 
-        // Make sure to do ipc.send('some String'),
-        // where 'some String' must be same with
-        // the first parameter of ipcMain.on() in app.js
-        ipc.send('openChildWindow');
+    }
+
+    async function makePostRequest(test) {
+        const axios = require('axios').default;
+        axios.get('http://127.0.0.1:5000/stock')
+            .then(function (response) {
+                console.log("It says: ", response.data);
+            })
+            .catch(function (error) {
+                console.log(5);
+                console.log(error);
+            });
     }
 </script>
 </body>
