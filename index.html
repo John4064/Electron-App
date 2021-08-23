@@ -1,27 +1,40 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="skeleton.css">
-    <title>Stock Application</title>
+    <title>Stock Analysis</title>
+    <link rel="stylesheet" href = 'skeleton.css'>
+    <link rel="stylesheet" href = 'style.css'>
 </head>
-
 <body>
-    <div class="container">
-        <button id="mybutton">DO SOMETHING</button>
-    </div>
+<div>
+    <h1>
+        Hello : This is first window
+    </h1>
+    <br />
 
+    <button onclick="makePostRequest(5)">
+        Go to Settings Window
+    </button>
+</div>
+<script>
+    // Function that will be called on click
+    // event of "Go to settings window" button
+    function doSomething(){
+        console.log(5);
 
+    }
 
-
-<!-- Insert this line above script imports  -->
-<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-<!-- normal script imports etc  -->
-<script> require('./main.js')</script>
-<script src="./app.js"></script>
-<!-- Insert this line after script imports -->
-<script>if (window.module) module = window.module;</script>
-
+    async function makePostRequest(test) {
+        const axios = require('axios').default;
+        axios.get('http://127.0.0.1:5000/stock')
+            .then(function (response) {
+                console.log("It says: ", response.data);
+            })
+            .catch(function (error) {
+                console.log(5);
+                console.log(error);
+            });
+    }
+</script>
 </body>
 </html>
