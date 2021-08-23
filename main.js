@@ -9,14 +9,6 @@ function createWindow () {
             nodeIntegration: true
         }
     })
-
-    win.loadFile('index.html');
-}
-app.whenReady().then(createWindow)
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {0
-        app.quit()
-    }
     var python = require('child_process').spawn('py', ['./backend/app.py']);
     python.stdout.on('data', function (data) {
         console.log("data: ", data.toString('utf8'));
@@ -24,6 +16,14 @@ app.on('window-all-closed', () => {
     python.stderr.on('data', (data) => {
         console.log(`stderr: ${data}`); // when error
     });
+    win.loadFile('index.html');
+}
+app.whenReady().then(createWindow)
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {0
+        app.quit()
+    }
+
 })
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
