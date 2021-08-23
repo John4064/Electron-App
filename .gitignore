@@ -3514,3 +3514,4 @@ node_modules/yallist/yallist.js
 node_modules/yauzl/index.js
 node_modules/yauzl/LICENSE
 node_modules/yauzl/package.json
+*.xml

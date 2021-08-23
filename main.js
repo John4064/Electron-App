@@ -6,19 +6,21 @@ function createWindow () {
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false
         }
     })
-    var python = require('child_process').spawn('py', ['./backend/app.py']);
-    python.stdout.on('data', function (data) {
-        console.log("data: ", data.toString('utf8'));
-    });
-    python.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`); // when error
-    });
     win.loadFile('index.html');
 }
-app.whenReady().then(createWindow)
+app.whenReady().then(() => {
+    createWindow()
+
+    app.on('activate', function () {
+        // On macOS it's common to re-create a window in the app when the
+        // dock icon is clicked and there are no other windows open.
+        if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+})
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {0
         app.quit()
