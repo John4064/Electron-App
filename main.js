@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const directory = "J:\\Workspace\\Web Development\\melon\\main\\Electron-App\\backend\\dist\\app\\app.exe";
 
 function createWindow () {
     const win = new BrowserWindow({
@@ -11,10 +12,11 @@ function createWindow () {
         }
     })
     win.loadFile('index.html');
+    //THIS initalizes the flask exe for app
+    var subpy = require('child_process').spawn(directory)
 }
 app.whenReady().then(() => {
     createWindow()
-
     app.on('activate', function () {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
