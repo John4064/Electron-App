@@ -4,7 +4,8 @@
   "description": "Electron Stock App",
   "main": "main.js",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "python-shell": "^3.0.0"
   },
   "devDependencies": {
     "electron": "^13.1.9"
