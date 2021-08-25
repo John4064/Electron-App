@@ -15,6 +15,10 @@ def test():
         'index': 1
     }
     return jsonify(response),200
+
+def work():
+
+    return
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
-    #check()
+    #app.run(host='0.0.0.0',port=5000)
+    work()

@@ -4,13 +4,18 @@ html{
 body {
     font: inherit;
     font-size: 32px;
-    background-color: darkblue;
-    color: greenyellow;
+    background-color: greenyellow;
     text-align: center;
 }
 h1{
     color: #000d48;
     font-family: impact;
+    padding-top: 5px;
+}
+.header{
+    color: darkslateblue;
+    border: 2px groove midnightblue;
+
 }
 .container{
     background-color: lightcoral;

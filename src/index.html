@@ -6,10 +6,18 @@
     <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
 
     <title>Stock Analysis</title>
-    <link rel="stylesheet" href = 'skeleton.css'>
-    <link rel="stylesheet" href = 'style.css'>
+    <link rel="stylesheet" href = 'styles/skeleton.css'>
+    <link rel="stylesheet" href = 'styles/style.css'>
 </head>
 <body>
+<div class ="header">
+    <table>
+        <tr>
+            <th><img src = 'icons/minimize.png' alt="Minimize"></th>
+            <th><p>Upper Header</p></th>
+        </tr>
+    </table>
+</div>
 <div class="container">
     <h1>
         Hello : This is first window
@@ -40,6 +48,6 @@
             });
     }
 </script>
-<script src="./renderer.js"></script>
+<script src="../renderer.js"></script>
 </body>
 </html>
