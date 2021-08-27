@@ -12,9 +12,13 @@ h1{
     font-family: impact;
     padding-top: 5px;
 }
-.header{
+.topnav{
     color: darkslateblue;
     border: 2px groove midnightblue;
+
+}
+.tab{
+    border: none;
 
 }
 .container{
@@ -24,5 +28,5 @@ h1{
 button{
     background-color: #000000;
     color: #5a6eb1;
-    padding: .4em 1.2em;
+    padding: 0em 1.2em;
 }

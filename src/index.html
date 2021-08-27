@@ -10,11 +10,11 @@
     <link rel="stylesheet" href = 'styles/style.css'>
 </head>
 <body>
-<div class ="header">
+<div class ="topnav">
     <table>
         <tr>
-            <th><img src = 'icons/minimize.png' alt="Minimize"></th>
-            <th><p>Upper Header</p></th>
+            <td class ="tab"><a href = javascript:onClick=minimize()><img src = 'icons/minimize.png' alt="Minimize"></a></td>
+            <td class ="tab"><p>Upper Header</p></td>
         </tr>
     </table>
 </div>
@@ -29,11 +29,17 @@
     </button>
 </div>
 <script>
-    // Function that will be called on click
-    // event of "Go to settings window" button
-    async function doSomething(){
+    async function doSome(){
         console.log(5);
+    }
+    // Function that will be called on click
 
+    async function minimize(){
+        window.innerWidth = 100;
+        window.innerHeight = 100;
+        window.screenX = screen.width;
+        window.screenY = screen.height;
+        alwaysLowered = true;
     }
     //Simple function atm
     async function makePostRequest(test) {
